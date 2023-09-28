@@ -13,6 +13,7 @@ const networkConfig = {
         callbackGasLimit: "500000", //500000
         interval: "30",
         mintFee: ethers.parseEther("1"),
+        ethUsdPriceFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
     },
     31337: {
         name: "hardhat",
@@ -23,6 +24,7 @@ const networkConfig = {
         callbackGasLimit: "500000", //500000
         interval: "30",
         mintFee: ethers.parseEther("1"),
+        ethUsdPriceFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
     },
 }
 

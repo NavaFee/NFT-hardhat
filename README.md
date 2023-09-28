@@ -10,3 +10,5 @@
 
 -   Pros: The data is on chain!
 -   Cons: Much more expensive!
+
+can watch Nft at :testnets.opensea.io

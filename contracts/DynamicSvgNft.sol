@@ -44,10 +44,9 @@ contract DynamicSvgNft is ERC721 {
 
     function mintNft(int256 highValue) public {
         s_tokenIdToHighValue[s_tokenCounter] = highValue;
-        s_tokenCounter++;
         _safeMint(msg.sender, s_tokenCounter);
-
         emit CreatedNFT(s_tokenCounter, highValue);
+        s_tokenCounter++;
     }
 
     function _baseURI() internal pure override returns (string memory) {

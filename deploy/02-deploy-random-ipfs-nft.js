@@ -81,6 +81,15 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
+    if (developmentChains.includes(network.name)) {
+        const vrfCoordinatorV2Mock = await ethers.getContract(
+            "VRFCoordinatorV2Mock"
+        )
+        await vrfCoordinatorV2Mock.addConsumer(
+            subscriptionId,
+            randomIpfsNft.address
+        )
+    }
     log("----------------------------------------------------")
     if (
         !developmentChains.includes(network.name) &&
