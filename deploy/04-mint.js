@@ -15,11 +15,10 @@ module.exports = async ({ getNamedAccounts }) => {
     const dynamicSvgNft = await ethers.getContract("DynamicSvgNft", deployer)
     const dynamicSvgNftMintTx = await dynamicSvgNft.mintNft(highValue)
     await dynamicSvgNftMintTx.wait(1)
-    console.log("=====================================================")
+
     console.log(
         `Dynamic SVG NFT index 0 tokenURI: ${await dynamicSvgNft.tokenURI(0)}`
     )
-    console.log("=====================================================")
 
     // Random IPFS NFT
     const randomIpfsNft = await ethers.getContract("RandomIpfsNft", deployer)
