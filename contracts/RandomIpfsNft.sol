@@ -93,7 +93,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable {
         // 0 - 9 Pug
         // 10 - 39 Shiba Inu
         // 40 - 99 St. Bernard
-        Breed dogBreed = getBreedFormModdedRng(moddedRng);
+        Breed dogBreed = getBreedFromModdedRng(moddedRng);
         s_tokenCounter++;
         _safeMint(dogOwner, newTokenId);
         _setTokenURI(newTokenId, s_dogTokenUris[uint256(dogBreed)]);
@@ -108,7 +108,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage, Ownable {
         }
     }
 
-    function getBreedFormModdedRng(
+    function getBreedFromModdedRng(
         uint256 moddedRng
     ) public pure returns (Breed) {
         uint256 cumulativeSum = 0;
