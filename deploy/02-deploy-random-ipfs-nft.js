@@ -5,7 +5,6 @@ const {
     storeImages,
     storeTokenUriMetadata,
 } = require("../utils/uploadToPinata")
-require("dotenv").config()
 
 const imagesLocation = "./images/randomNft/"
 let tokenUris = [
